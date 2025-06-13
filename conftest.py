@@ -11,15 +11,14 @@ def driver(request):
     yield driver
     driver.quit()
 
-    @pytest.fixture(scope='function')
-    def user():
-        created_user = create_user()
-        yield created_user
-        delete_user(created_user)
+@pytest.fixture(scope='function')
+def user():
+    created_user = create_user()
+    yield created_user
+    delete_user(created_user)
 
-
-    @pytest.fixture(scope='function')
-    def order(user):
-        created_order = create_order(user)
-        yield created_order
-        delete_order(created_order)
+@pytest.fixture(scope='function')
+def order(user):
+    created_order = create_order(user)
+    yield created_order
+    delete_order(created_order)
