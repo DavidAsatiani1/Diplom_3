@@ -57,4 +57,4 @@ class TestMainPage:
         login_page.login_account(Data.data)
         main_page.ingredient_drag_and_drop()
         main_page.click_order_button()
-        assert main_page.id_modal_is_displayed() == True
+        assert main_page.id_modal_is_displayed()
